@@ -116,7 +116,7 @@ int deletar()
  	for(laco=1;laco=1;)
  	{
 	 
-	 system ("cls");
+	 system ("cls"); //Responsavel por limpar a tela
 	 
 	setlocale(LC_ALL, "Portuguese"); // Definindo a linguagem
 
@@ -125,17 +125,17 @@ int deletar()
  		printf("\t1 - Registrar nomes\n");
  		printf("\t2 - Consultar nomes\n");
  		printf("\t3 - Deletar nomes\n\n");
+ 		printf("\t4 - Sair do sistema\n\n");
  		printf("opcão: "); 
  	
-    scanf("%d", &opcao); //Armazenamento de usuário
+    scanf("%d", &opcao); //Armazenando a escolha do usuário
  	
- 	system("cls");
+ 	system("cls"); //Responsavel por lilimpar a tela
  	
- 	
- 	switch (opcao)
+ 	switch (opcao) //Inicio da seleção do menu
  	{
  		case 1:
- 		registro();
+ 		registro(); //Chamada de funções
 		break;
 		
 		case 2: 
@@ -146,8 +146,13 @@ int deletar()
 		deletar();
 	    break;
 	    
+	    case 4:
+	    printf("Obrigado por utilizar o sistema!\n");
+	    return 0;
+	    break;
+	    
 	    default:
-	     printf("Essa opcão não esta disponivel!\n");
+	    printf("Essa opcão não esta disponivel!\n");
 	    system("pause");
 		break;	 //Fim da seleção
 	    
