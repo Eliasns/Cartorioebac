@@ -59,7 +59,6 @@
  
  int consulta()
 {
-    
     setlocale(LC_ALL, "Portuguese"); // Definindo a linguagem
     
 	char cpf[40];
@@ -84,7 +83,6 @@
 	}
 	
     system("pause");
-	
 }
 
 int deletar()
@@ -101,12 +99,10 @@ int deletar()
 	
 	if(file == NULL)
 	{
-		printf("O usuário não se encontra no sistema!.\n");
-		system("pause");
+        printf("O usuário não se encontra no sistema!.\n");
+        system("pause");
 	}
 }
-
-
 
  int main ()
  {
