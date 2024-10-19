@@ -5,56 +5,57 @@
 
  int registro()
 {
- 	char arquivo[40]; 
- 	char cpf[40];
- 	char nome[40];
- 	char sobrenome[40];
- 	char cargo[40];
- 	//final da criação de variaveis/strings!
- 	printf("Digite o cpf a ser cadastrado!: ");
- 	scanf("%s", cpf); //% refere-se a strings
- 	
- 	strcpy(arquivo, cpf); //Responsavel por copiar os valores das strings
- 	
- 	FILE *file; //cria o arquivo
- 	file = fopen(arquivo, "w"); //cria o arquivo o "w" significa escrever
- 	fprintf(file, cpf); //salva o valor da variavel
- 	fclose(file); //fecha o arquivo
- 	
- 	file = fopen(arquivo, "a"); // salva o arquivo com saparacao de informações por virgula!
- 	fprintf(file,",");
- 	fclose(file);
- 	
- 	printf("digite o nome a ser cadastrado!: ");
- 	scanf("%s",nome);
- 	
- 	file = fopen (arquivo, "a");
- 	fprintf(file,nome);
- 	fclose(file);
- 	
- 	file = fopen(arquivo, "a");
- 	fprintf(file,",");
- 	fclose(file);
- 	
- 	printf("digite o sobrenome a ser cadastrado!: ");
- 	scanf("%s", sobrenome);
- 	
- 	file = fopen(arquivo, "a");
- 	fprintf(file,sobrenome);
- 	fclose(file);
- 	
- 	file = fopen(arquivo, "a");
- 	fprintf(file,",");
- 	fclose(file);
- 	
- 	printf("digite o cargo a ser cadastrado!: ");
- 	scanf("%s", cargo);
- 	
- 	file = fopen(arquivo, "a");
- 	fprintf(file,cargo);
- 	fclose(file);
- 	
- 	system("pause"); //função de pausar o sistema.
+	//Inicio da criacão do das variaveis/strings
+	char arquivo[40]; 
+	char cpf[40];
+	char nome[40];
+	char sobrenome[40];
+	char cargo[40];
+	//final da criação de variaveis/strings!
+	printf("Digite o cpf a ser cadastrado!: ");
+	scanf("%s", cpf); //% refere-se a strings
+	
+	strcpy(arquivo, cpf); //Responsavel por copiar os valores das strings
+	
+	FILE *file; //cria o arquivo
+	file = fopen(arquivo, "w"); //cria o arquivo o "w" significa escrever
+	fprintf(file, cpf); //salva o valor da variavel
+	fclose(file); //fecha o arquivo
+	
+	file = fopen(arquivo, "a"); // salva o arquivo com saparacao de informações por virgula!
+	fprintf(file,",");
+	fclose(file);
+	
+	printf("digite o nome a ser cadastrado!: ");
+	scanf("%s",nome);
+	
+	file = fopen (arquivo, "a");
+	fprintf(file,nome);
+	fclose(file);
+	
+	file = fopen(arquivo, "a");
+	fprintf(file,",");
+	fclose(file);
+	
+	printf("digite o sobrenome a ser cadastrado!: ");
+	scanf("%s", sobrenome);
+	
+	file = fopen(arquivo, "a");
+	fprintf(file,sobrenome);
+	fclose(file);
+	
+	file = fopen(arquivo, "a");
+	fprintf(file,",");
+	fclose(file);
+
+	printf("digite o cargo a ser cadastrado!: ");
+	scanf("%s", cargo);
+
+	file = fopen(arquivo, "a");
+	fprintf(file,cargo);
+	fclose(file);
+	
+	system("pause"); //função de pausar o sistema.
 }
  
  int consulta()
@@ -97,6 +98,7 @@ int deletar()
 	FILE *file;
 	file = fopen(cpf,"r");
 	
+	
 	if(file == NULL)
 	{
         printf("O usuário não se encontra no sistema!.\n");
@@ -112,11 +114,10 @@ int deletar()
  	for(laco=1;laco=1;)
  	{
 	 
-	 system ("cls"); //Responsavel por limpar a tela
-	 
-	setlocale(LC_ALL, "Portuguese"); // Definindo a linguagem
+		system ("cls"); //Responsavel por limpar a tela
+		setlocale(LC_ALL, "Portuguese"); // Definindo a linguagem
 
- 		printf("### Cartorio da EBAC ###\n\n"); //Inicio do menu
+		printf("### Cartorio da EBAC ###\n\n"); //Inicio do menu
  		printf("Escolha a opção desejada no menu\n\n");
  		printf("\t1 - Registrar nomes\n");
  		printf("\t2 - Consultar nomes\n");
@@ -124,36 +125,33 @@ int deletar()
  		printf("\t4 - Sair do sistema\n\n");
  		printf("opcão: "); 
  	
-    scanf("%d", &opcao); //Armazenando a escolha do usuário
+		scanf("%d", &opcao); //Armazenando a escolha do usuário
  	
- 	system("cls"); //Responsavel por lilimpar a tela
+ 		system("cls"); //Responsavel por lilimpar a tela
  	
- 	switch (opcao) //Inicio da seleção do menu
- 	{
- 		case 1:
- 		registro(); //Chamada de funções
-		break;
+		switch (opcao) //Inicio da seleção do menu
+ 		{
+			case 1:
+			registro(); //Chamada de funções
+			break;
 		
-		case 2: 
-		consulta();
-		break;
+			case 2: 
+			consulta();
+			break;
 		
-		case 3:	
-		deletar();
-	    break;
+			case 3:	
+			deletar();
+	    	break;
 	    
-	    case 4:
-	    printf("Obrigado por utilizar o sistema!\n");
-	    return 0;
-	    break;
+	    	case 4:
+	    	printf("Obrigado por utilizar o sistema!\n");
+	    	return 0;
+			break;
 	    
-	    default:
-	    printf("Essa opcão não esta disponivel!\n");
-	    system("pause");
-		break;	 //Fim da seleção
-	    
+	    	default:
+	    	printf("Essa opcão não esta disponivel!\n");
+	    	system("pause");
+			break;	 //Fim da seleção
+	    }
 	}
- 	
-	}
-}
- 
+} 
